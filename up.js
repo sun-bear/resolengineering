@@ -20,30 +20,22 @@ body, html {height: 100%}
 <body>
 
 <div class="bgimg w3-display-container w3-animate-opacity w3-text-white">
-  <div class="w3-display-topleft w3-padding-large w3-xlarge">
-    Logo
+  <div class="w3-display-topleft w3-large w3-padding-large">
+    Resolengineering
   </div>
   <div class="w3-display-middle">
     <h1 class="w3-jumbo w3-animate-top">MAINTENANCE COMPLETE</h1>
     <hr class="w3-border-grey" style="margin:auto;width:40%">
     <p class="w3-large w3-center">We&rsquo;re Back!</p>
+	<p>You can use <span style="color: #000000;"><strong><a style="color: #000000;" href="https://resolengineering.com/">https://resolengineering.com/</a></strong></span> now.</p>
   </div>
-  <div class="w3-display-bottomleft w3-padding-large">
+  <div class="w3-display-bottomleft w3-tiny w3-padding-large">
     Powered by <a href="https://www.w3schools.com/w3css/default.asp" target="_blank">w3.css</a>
   </div>
 </div>
 
 </body>
 </html>
-
-<article> 
-  <div class="background">
-    <div class="content">
-      <h1>We&rsquo;re Back!</h1>
-        <p>You can use <span style="color: #000000;"><strong><a style="color: #000000;" href="https://resolengineering.com/">https://resolengineering.com/</a></strong></span> now.</p>
-    </div>
-  </div>
-</article>
 `;
 
 async function handleRequest(request) {
@@ -56,11 +48,11 @@ async function handleRequest(request) {
     });
   } else {
     // Serve raw HTML using HTTP/2 for the CSS file
-      new Response(HTML, {
+    return new Response(HTML, {
       headers: {
-        'Content-Type': 'text/html',
+        'content-type': 'text/html',
         'Pragma': 'no-cache',
-        'Link': '<https://www.w3schools.com/w3css/4/w3.css>; rel=preload; as=style',
+        'Link': '<https://www.w3schools.com/w3css/4/w3.css> rel=preload; as=style',
       },
     });
   }
